@@ -1,15 +1,16 @@
 
 import React, { useEffect, useState } from 'react'
 import Movie  from './components/Movie'
+import SearchBar from './components/SearchBar'
 import './App.css'
 
 
 const FEATURED_API = 'https://api.themoviedb.org/3/discover/movie?api_key=530c61dca46ff0409bad2510f4edf1ba&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page'
-const SEARCH_API = 'https://api.themoviedb.org/3/search/movie?api_key=530c61dca46ff0409bad2510f4edf1ba&query='
+
 
 function App() {
   const [movies, setMovies] = useState([])
-  const [search, setSearch] = useState('')
+  const [search, setSearch] = useState('carol')
 
   useEffect(() => {
     getMovies(FEATURED_API)
@@ -23,25 +24,17 @@ function App() {
       })
   }
 
-  const getSearch = (e) => {
-    e.preventDefault();
-    getMovies(SEARCH_API + search)
-    }
+  console.log(search, 'katia')
 
-  const typing = (e) => {
-    setSearch(e.target.value)
-}
 
 
   return (
       <div>    
           <header className='header'>
-          <form onSubmit={getSearch}>
-            <input type='text' placeholder='Search...' className='input' onChange={typing} ></input>
-            </form>
+          <SearchBar getMovies={getMovies} search={search} setSearch={setSearch}/>
           </header>   
           <div className='movie-container'>
-            {movies.map((movie) => (
+            {movies && movies.map((movie) => (
           <Movie 
             key={movie.id}           
             {...movie}
