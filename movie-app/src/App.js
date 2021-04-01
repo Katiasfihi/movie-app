@@ -10,7 +10,7 @@ const FEATURED_API = 'https://api.themoviedb.org/3/discover/movie?api_key=530c61
 
 function App() {
   const [movies, setMovies] = useState([])
-  const [search, setSearch] = useState('carol')
+  const [search, setSearch] = useState('')
 
   useEffect(() => {
     getMovies(FEATURED_API)
@@ -23,8 +23,6 @@ function App() {
         setMovies(data.results)
       })
   }
-
-  console.log(search, 'katia')
 
 
 
