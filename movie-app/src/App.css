@@ -1,0 +1,90 @@
+body {
+  background-color: #22254b;
+  color: white;
+  font-family: sans-serif;
+  margin: 0;
+}
+
+.movie {
+  width: 300px;
+  background-color: #373b69;
+  margin: 1rem;
+  border-radius: 3px;
+  box-shadow: 0 -3px 3px 5px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  position: relative;
+}
+
+.movie-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  margin: 1rem;
+}
+
+.movie img {
+  max-width: 100%;
+}
+
+.movie-info {
+  text-align: center;
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem;
+}
+
+.movie-info h3 {
+  margin: 0;
+  text-align: left;
+}
+
+.movie-overview {
+  background-color: white;
+  color: #22254b;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 1rem;
+  transform: translateY(100%);
+  transition: transform 0.3s ease-in-out;
+}
+
+.movie:hover .movie-overview {
+  transform: translateY(0);
+}
+
+.header {
+  width: 100%;
+  padding: 1rem;
+  background-color: #373b69;
+}
+
+.input {
+  margin-left: 80%;
+  padding: 0.5rem 1.5rem;
+  font-size: 1.2rem;
+  font-family: inherit;
+  border: 2px solid #22254b;
+}
+
+.tag {
+  background-color: #22254b;
+  padding: 1rem;
+}
+
+.tag.green {
+  color: green;
+  font-weight: bolder;
+  font-size: 1.1rem;
+}
+.tag.red {
+  color: red;
+  font-weight: bolder;
+  font-size: 1.1rem;
+}
+.tag.orange {
+  color: orange;
+  font-weight: bolder;
+  font-size: 1.1rem;
+}
